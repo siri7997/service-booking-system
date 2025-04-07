@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Feedback</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating label {
+      font-size: 1.5rem;
+      color: #d1d5db;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .star-rating input:checked ~ label,
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+      color: #facc15;
+    }
+
+    .star-rating input:checked ~ label:hover,
+    .star-rating input:checked ~ label:hover ~ label {
+      color: #facc15;
+    }
+
+    .star-rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+  <div class="bg-white rounded-2xl shadow-xl w-full max-w-2xl p-8">
+    <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">We Value Your Feedback</h2>
+    
+    <form id="feedbackForm" class="space-y-6">
+      <!-- Service Feedback -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">How was the service you received?</label>
+        <div class="star-rating">
+          <input type="radio" id="service5" name="serviceRating" value="5" required><label for="service5">&#9733;</label>
+          <input type="radio" id="service4" name="serviceRating" value="4"><label for="service4">&#9733;</label>
+          <input type="radio" id="service3" name="serviceRating" value="3"><label for="service3">&#9733;</label>
+          <input type="radio" id="service2" name="serviceRating" value="2"><label for="service2">&#9733;</label>
+          <input type="radio" id="service1" name="serviceRating" value="1"><label for="service1">&#9733;</label>
+        </div>
+      </div>
+
+      <!-- Service Provider Rating -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Rate the Service Provider</label>
+        <div class="star-rating">
+          <input type="radio" id="provider5" name="providerRating" value="5" required><label for="provider5">&#9733;</label>
+          <input type="radio" id="provider4" name="providerRating" value="4"><label for="provider4">&#9733;</label>
+          <input type="radio" id="provider3" name="providerRating" value="3"><label for="provider3">&#9733;</label>
+          <input type="radio" id="provider2" name="providerRating" value="2"><label for="provider2">&#9733;</label>
+          <input type="radio" id="provider1" name="providerRating" value="1"><label for="provider1">&#9733;</label>
+        </div>
+      </div>
+
+      <!-- Website Experience -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Your experience using the app/website for booking</label>
+        <div class="star-rating">
+          <input type="radio" id="app5" name="appRating" value="5" required><label for="app5">&#9733;</label>
+          <input type="radio" id="app4" name="appRating" value="4"><label for="app4">&#9733;</label>
+          <input type="radio" id="app3" name="appRating" value="3"><label for="app3">&#9733;</label>
+          <input type="radio" id="app2" name="appRating" value="2"><label for="app2">&#9733;</label>
+          <input type="radio" id="app1" name="appRating" value="1"><label for="app1">&#9733;</label>
+        </div>
+      </div>
+
+      <!-- Suggestions -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Any suggestions for improvement?</label>
+        <textarea name="suggestions" rows="3" placeholder="Let us know if you faced any issues or have improvement ideas..." class="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+        Submit Feedback
+      </button>
+    </form>
+
+    <p class="text-center text-xs text-gray-500 mt-4">Thank you for helping us improve!</p>
+  </div>
+
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("Thank you! Your feedback has been submitted.");
+      // TODO: Send feedback to your backend or store it
+      this.reset();
+    });
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+          event.preventDefault(); // prevent default form submission
+          window.location.href = "thank.html"; // redirect to details.htm
+        });
+  </script>
+</body>
+</html>

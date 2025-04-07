@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center p-6" style="background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1950&q=80');">
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+
+  <!-- Sign-Up Form -->
+  <div class="relative z-10 w-full max-w-2xl bg-white bg-opacity-90 backdrop-blur-md p-10 rounded-2xl shadow-2xl">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Create Your Account</h2>
+    <form id="signupForm">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Name -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+          <input type="text" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John Doe">
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Email ID</label>
+          <input type="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="john@example.com">
+        </div>
+
+        <!-- Phone Number -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+          <input type="tel" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+91 9876543210">
+        </div>
+
+        <!-- Age -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Age</label>
+          <input type="number" min="1" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="25">
+        </div>
+
+        <!-- Location -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Location</label>
+          <input type="text" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="City, State">
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <input type="password" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter password">
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+          <input type="password" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Re-enter password">
+        </div>
+
+        <!-- Job Description -->
+        <div class="md:col-span-2">
+          <label class="block text-sm font-medium text-gray-700 mb-1">Job Description</label>
+          <textarea required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="3" placeholder="e.g., Software Engineer at XYZ Corp"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="mt-8 w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300">
+        Sign Up
+      </button>
+    </form>
+
+    <p class="text-center mt-6 text-sm text-gray-600">Already have an account?
+      <a href="index.html" class="text-blue-500 hover:underline">Log in</a>
+    </p>
+  </div>
+
+  <!-- JavaScript Redirect -->
+  <script>
+    const form = document.getElementById('signupForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form action
+
+      // Optional: Add validation or show "processing" message here
+
+      // Simulate successful signup and redirect to login page
+      alert("Sign-up successful! Redirecting to login...");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
